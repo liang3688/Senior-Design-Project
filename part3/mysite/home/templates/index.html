@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <style type="text/css">
+            tab0 { padding-left: 2em; }
+            tab1 { padding-left: 4em; }
+            tab2 { padding-left: 8em; }
+            tab3 { padding-left: 12em;}
+            tab4 { padding-left: 16em;}
+        </style>
+   </head>
+   {% load static %}
+   <body style="background-image: url('{% static 'img/bg3.jpg' %}'); background-repeat:no-repeat; background-size:cover;">
+       <a href="{% url 'index' %}"><button style="height:40px;width:60px">Home</button></a>
+      <h1>LAZZ : Search Movies</h1>
+      <p><tab4><tab0>Powered by Metacritic.com</tab0></tab4></p>
+          
+      <form action="search" method="post">{% csrf_token %}
+         <p>
+            <label for="filter">Search from: </label>
+            <select style="height:30px;width:120px" name="filter">
+               <option value="title">Movie Name</option>
+               <option value="actor">Actor</option>
+               <option value="director">Director</option>
+               <option value="genre">Genre</option>
+               <option value="distributor">Distributor</option>
+            </select>
+            <label for="keyword">Please enter a keyword: </label>
+            <input style="height:30px;width:280px" id="keyword" type="text" name="keyword" value="" placeholder="Search...">
+            
+            <label for="filter"> Display by: </label>
+            <select style="height:30px;width:220px" name="OrderBy_filter">
+               <option value="release_date">Newly Released</option>
+               <option value="metacritic_score">Metacritic Score (High to Low)</option>
+               <option value="user_score">User Score (High to Low)</option>
+            </select>
+         
+         </p>
+         
+         <p>
+            <tab3></tab3>
+            <input style="height:50px;width:70px" type="submit" value="Search">
+            <tab1></tab1>
+            <input style="height:50px;width:70px" type="reset" value="Reset">
+         </p>
+      </form>
+   </body>
+</html>

@@ -1,0 +1,6 @@
+{ 
+  "spark_master": "local[2]",
+  "mysql_user": "your_name",
+  "mysql_pwd": "some_password",
+  "mysql_db": "cs179g"
+}

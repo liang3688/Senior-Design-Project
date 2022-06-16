@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <style type="text/css">
+            tab0 { padding-left: 2em; }
+            tab1 { padding-left: 4em; }
+            tab2 { padding-left: 8em; }
+            tab3 { padding-left: 12em; }
+            tab4 { padding-left: 16em; }
+           body {
+               background-image:url('bg4.jfif');
+               background-repeat:no-repeat;
+               background-size:cover;
+           }
+        </style>
+   </head>
+   <body>
+       <a href="{% url 'index' %}"><button>Home</button></a>
+      <h1>CS179G Group 8 : Search Movies | Advanced Search</h1>
+       <p><tab4><tab4><tab0>Powered by Metacritic.com</tab0></tab4></tab4></p>
+          
+      <form action="search" method="post"> {% csrf_token %}
+         <p>
+          <p>Search a word that exists in all the movie summaries and reviews.</p>
+            <label for="keyword">Please enter a keyword: </label>
+            <input style="height:30px;width:260px" id="keyword" type="text" keyword="keyword" value="" placeholder="Search..">
+            <label for="filter">Search from: </label>
+            <select style="height:30px;width:100px" name="filter">
+               <option value="all">All</option>
+               <option value="summary">Summary</option>
+               <option value="critic_review">Critic Review</option>
+               <option value="user_review">User Review</option>
+            </select>
+         </p>
+         
+         <p>
+            <tab3></tab3>
+            <input style="height:50px;width:70px" type="submit" value="Search">
+            <tab1></tab1>
+            <input style="height:50px;width:70px" type="reset" value="Reset">
+         </p>
+      </form>
+   </body>
+</html>

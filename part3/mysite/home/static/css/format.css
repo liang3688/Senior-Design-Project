@@ -1,0 +1,19 @@
+.img_row {
+    display: flex;
+}
+  
+.img_column {
+    flex: 33.33%;
+    padding: 5px;
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+/* img {
+    float: left;
+    width:  100px;
+    height: 100px;
+    object-fit: cover;
+} */
